@@ -2,7 +2,7 @@
 var myTurtle;
 
 function setup() {
-	createCanvas(640, 640);
+	createCanvas(windowWidth, windowHeight);
 	noFill();
 	stroke(255);
 	background(50);
@@ -16,7 +16,7 @@ function setup() {
 function draw() {
 	// move to starting position (without drawing)
 	myTurtle.penUp();
-	myTurtle.moveBackward(200);
+	myTurtle.moveBackward(250);
 	myTurtle.penDown();
 
 	// star
@@ -25,7 +25,7 @@ function draw() {
 		myTurtle.turnRight(170);
 	}
 
-	// sprial
+	//sprial
 	// for (var i = 0; i < 500; i++) {
 	// 	myTurtle.moveForward(i * 0.1);
 	// 	myTurtle.turnRight(10);
