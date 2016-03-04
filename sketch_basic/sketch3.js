@@ -9,15 +9,15 @@ var img;
 // you will use something like loadImage("shell.jpg")
 
 function preload() {
- 	img = loadImage("lion.jpg");
+  img = loadImage("lion.jpg");
 }
 
 function setup() {
-	createCanvas(600, 600);
-	imageMode(CENTER);
+  createCanvas(windowWidth, windowHeight);
+  imageMode(CENTER);
 }
 
 function draw() {
-	background(125, 125, 125);
-	// image(img, mouseX, mouseY);
+  background(125, 125, 125);
+  image(img, mouseX, mouseY, 200, 200);
 }

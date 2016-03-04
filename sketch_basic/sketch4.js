@@ -30,7 +30,7 @@ function draw() {
 	for (row = 0; row < rows; row++) {
 		for (col = 0; col < rows; col++) {
 			// fill(random(0,255), random(0,255), random(0,255));
-			drawThing(col * random(150) + random(55), row * random(50) + 25);
+			drawThing(random(width), random(height));
 
 		}
 	}
@@ -49,8 +49,8 @@ function drawThing(x, y) {
 
 
 
-	line(x, y, radius, radius);
-	rect(y, x, radius, radius);
-	ellipse(x, y, radius * 1.5, radius);
+	// line(x, y, radius, radius);
+	rect(x, y, radius, radius);
+	// image(img, x, y, radius * 1.5, radius);
 
 }
