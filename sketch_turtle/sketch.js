@@ -5,8 +5,8 @@ function setup() {
 	createCanvas(windowWidth, windowHeight);
 	noFill();
 	stroke(255);
-	background(50);
-	noLoop();
+	background(0);
+	// noLoop();
 
 	myTurtle = new Turtle();
 }
@@ -16,13 +16,13 @@ function setup() {
 function draw() {
 	// move to starting position (without drawing)
 	myTurtle.penUp();
-	myTurtle.moveBackward(250);
+	myTurtle.moveBackward(random(150));
 	myTurtle.penDown();
 
 	// star
-	for (var i = 0; i < 50; i++) {
-		myTurtle.moveForward(400);
-		myTurtle.turnRight(170);
+	for (var i = 0; i < 120; i++) {
+		myTurtle.moveForward(sin(400 * 5 + 128));
+		myTurtle.turnRight(cos(170 / 5));
 	}
 
 	//sprial
