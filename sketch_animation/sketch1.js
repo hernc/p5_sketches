@@ -1,6 +1,6 @@
 // basic template sketch showing how to use the Turtle class
 var myTurtle;
-var TURN_ANGLE = 0.4;
+var TURN_ANGLE = -20;
 
 function setup() {
 	createCanvas(640, 640);
@@ -12,17 +12,17 @@ function setup() {
 
 
 function draw() {
-	myTurtle.moveTo(120,320);
-	myTurtle.turnTo(10 * millis());
+	myTurtle.moveTo(320,320);
+	myTurtle.turnTo(0);
 
-// 	randomSeed(cos(-5));
-	background(255,135,57);
-	stroke(255,56,78);
-	TURN_ANGLE = frameCount;
-	TURN_ANGLE = TURN_ANGLE / (cos(0.2));
+	background(0);
+	stroke(255);
+	fill(255);
+// 	TURN_ANGLE = frameCount;
+	TURN_ANGLE = TURN_ANGLE / 0.2;
 
-	for (var i = 0; i < 500; i++) {
-		myTurtle.moveForward(-300);
+	for (var i = 0; i < 5000; i++) {
+		myTurtle.moveForward(300);
 		myTurtle.turnLeft(TURN_ANGLE);
 	}
 
