@@ -20,11 +20,11 @@ function setup() {
 function draw() {
 	// move to starting position (without drawing)
 	myTurtle.penUp();
-	myTurtle.moveBackward(cos(50,360));
+	myTurtle.moveBackward(cos(50, 360));
 	myTurtle.penDown();
 
 	uglyTurtle.penDown();
-	uglyTurtle.moveForward(noise(60,150));
+	uglyTurtle.moveForward(noise(60, 150));
 	uglyTurtle.penUp();
 
 	// // star
