@@ -7,7 +7,7 @@ function setup() {
 	noFill();
 	stroke(random(255), random(255), random(255));
 	background(0);
-	frameRate(10);
+	frameRate(30);
 	// noLoop();
 
 	myTurtle = new Turtle();
@@ -20,7 +20,7 @@ function setup() {
 function draw() {
 	// move to starting position (without drawing)
 	myTurtle.penUp();
-	myTurtle.moveBackward(sin(5000,360));
+	myTurtle.moveBackward(cos(50,360));
 	myTurtle.penDown();
 
 	uglyTurtle.penDown();
