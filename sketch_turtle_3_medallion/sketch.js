@@ -7,7 +7,7 @@ function setup() {
 	noFill();
 	stroke(random(255), random(255), random(255));
 	background(0);
-	frameRate(60);
+	frameRate(10);
 	// noLoop();
 
 	myTurtle = new Turtle();
@@ -20,21 +20,28 @@ function setup() {
 function draw() {
 	// move to starting position (without drawing)
 	myTurtle.penUp();
-	myTurtle.moveBackward(noise(115));
+	myTurtle.moveBackward(sin(5000,360));
 	myTurtle.penDown();
 
 	uglyTurtle.penDown();
-	uglyTurtle.moveBackward((360));
+	uglyTurtle.moveForward(noise(60,150));
 	uglyTurtle.penUp();
 
 	// // star
 	for (var i = 0; i < 50; i++) {
-		for (var j = i * cos(50); j < 100; j++) {
-			myTurtle.moveForward(i * noise(14,360));
-			myTurtle.turnLeft(i * noise(j * noise(17,180)));
+		for (var j = i * sin(50); j < 300; j++) {
+			myTurtle.moveForward(i * noise(14, 360));
+			myTurtle.turnLeft(i * noise(j * (17, 180)));
+			myTurtle.turnRight(cos(56) * 135);
 
-			uglyTurtle.moveBackward(i * noise(40));
-			uglyTurtle.turnRight(i * 170);
+			uglyTurtle.moveBackward(i * noise(14, j));
+			uglyTurtle.turnTo(i * noise(j * (17, i)));
+			uglyTurtle.turnRight(cos(360) % 135);
+
+			// uglyTurtle.moveTo(i / 140);
+			// uglyTurtle.turnRight(i % 70);
+			// uglyTurtle.turnTo(i * 17);
+
 		}
 
 	}
@@ -42,10 +49,10 @@ function draw() {
 	// //sprial
 	for (var k = noise(i); k < 50; k++) {
 		for (var l = k; l < i; l++) {
-			uglyTurtle.moveBackward(k * noise(50.1));
-			uglyTurtle.turnTo(k * noise(i));
-			uglyTurtle.moveTo(i * noise(k));
-			uglyTurtle.turnTo(k * noise(90));
+			uglyTurtle.moveForward(k * 15.1);
+			uglyTurtle.turnLeft(k * i);
+			uglyTurtle.moveTo(i * [k]);
+			uglyTurtle.turnTo(k * [i]);
 		}
 
 	}
