@@ -7,12 +7,12 @@ function setup() {
 	noFill();
 	stroke(random(255), random(255), random(255));
 	background(0);
-	frameRate(20);
+	frameRate(15);
 	// noLoop();
 
 	myTurtle = new Turtle();
 	uglyTurtle = new Turtle();
-	evilTurtle = new Turtle();
+	// evilTurtle = new Turtle();
 }
 
 
@@ -20,19 +20,20 @@ function setup() {
 function draw() {
 	// move to starting position (without drawing)
 	myTurtle.penUp();
-	myTurtle.moveBackward(5);
+	myTurtle.moveForward(25);
 	myTurtle.penDown();
 
-	uglyTurtle.penDown();
-	uglyTurtle.moveForward(noise(60));
-	uglyTurtle.penUp();
+	// uglyTurtle.penDown();
+	// uglyTurtle.moveForward(noise(60));
+	// uglyTurtle.penUp();
 
 	// // star
-	for (var i = 0; i < 50; i++) {
-		for (var j = i * tan(50); j < 3; j++) {
-			myTurtle.moveForward(i * noise(14));
-			myTurtle.turnLeft(i * j * (118));
-			myTurtle.turnRight(cos(0560) * 135);
+	for (var i = 0; i < 15; i++) {
+		for (var j = i * sin(30); j < 9; j++) {
+			myTurtle.moveForward(7);
+			myTurtle.turnLeft(j + i);
+			myTurtle.turnRight(40 * i);
+			myTurtle.moveBackward(53 + j);
 
 			// uglyTurtle.moveBackward(i * noise(14, j));
 			// uglyTurtle.turnTo(i * noise(j * (17, i)));
