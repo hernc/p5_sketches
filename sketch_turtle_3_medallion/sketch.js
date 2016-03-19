@@ -7,7 +7,7 @@ function setup() {
 	noFill();
 	stroke(random(255), random(255), random(255));
 	background(0);
-	frameRate(30);
+	frameRate(20);
 	// noLoop();
 
 	myTurtle = new Turtle();
@@ -20,23 +20,23 @@ function setup() {
 function draw() {
 	// move to starting position (without drawing)
 	myTurtle.penUp();
-	myTurtle.moveBackward(cos(50, 360));
+	myTurtle.moveBackward(5);
 	myTurtle.penDown();
 
 	uglyTurtle.penDown();
-	uglyTurtle.moveForward(noise(60, 150));
+	uglyTurtle.moveForward(noise(60));
 	uglyTurtle.penUp();
 
 	// // star
 	for (var i = 0; i < 50; i++) {
-		for (var j = i * sin(50); j < 300; j++) {
-			myTurtle.moveForward(i * noise(14, 360));
-			myTurtle.turnLeft(i * noise(j * (17, 180)));
-			myTurtle.turnRight(cos(56) * 135);
+		for (var j = i * tan(50); j < 3; j++) {
+			myTurtle.moveForward(i * noise(14));
+			myTurtle.turnLeft(i * j * (118));
+			myTurtle.turnRight(cos(0560) * 135);
 
-			uglyTurtle.moveBackward(i * noise(14, j));
-			uglyTurtle.turnTo(i * noise(j * (17, i)));
-			uglyTurtle.turnRight(cos(360) % 135);
+			// uglyTurtle.moveBackward(i * noise(14, j));
+			// uglyTurtle.turnTo(i * noise(j * (17, i)));
+			// uglyTurtle.turnRight(cos(360) % 135);
 
 			// uglyTurtle.moveTo(i / 140);
 			// uglyTurtle.turnRight(i % 70);
@@ -47,15 +47,15 @@ function draw() {
 	}
 
 	// //sprial
-	for (var k = noise(i); k < 50; k++) {
-		for (var l = k; l < i; l++) {
-			uglyTurtle.moveForward(k * 15.1);
-			uglyTurtle.turnLeft(k * i);
-			uglyTurtle.moveTo(i * [k]);
-			uglyTurtle.turnTo(k * [i]);
-		}
-
-	}
+	// for (var k = noise(i); k < 50; k++) {
+	// 	for (var l = k; l < i; l++) {
+	// 		uglyTurtle.moveForward(k * 15.1);
+	// 		uglyTurtle.turnLeft(k * i);
+	// 		uglyTurtle.moveTo(i * [k]);
+	// 		uglyTurtle.turnTo(k * [i]);
+	// 	}
+	//
+	// }
 
 	//house
 	// evilTurtle.turnLeft(90); // left wall
