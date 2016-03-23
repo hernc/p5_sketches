@@ -9,9 +9,10 @@ function preload() {
 function setup() {
 	createCanvas(640, 640);
 	noFill();
-	stroke(255);
-	background(50);
-	noLoop();
+	stroke(random(255), random(255), random(255));
+	background(random(255), random(255), random(255));
+	// frameRate(5);
+	// noLoop();
 
 	myTurtle = new Turtle();
 }
@@ -21,19 +22,21 @@ function setup() {
 function draw() {
 	// move to starting position (without drawing)
 	myTurtle.penUp();
-	myTurtle.moveBackward(200);
+	myTurtle.moveBackward(750);
 	myTurtle.penDown();
 
 	// star
-	for (var i = 0; i < 50; i++) {
-		for (var ii = 0; ii < 20; ii++) {
-			myTurtle.moveForward(20);
-			myTurtle.turnLeft(5);
-			// myTurtle.image(leafImage, 10, 10);
+	for (var i = 0; i < 85; i++) {
+		for (var ii = 0; ii < 15; ii++) {
+			myTurtle.moveForward(90);
+			myTurtle.turnLeft(1080);
+			myTurtle.image(leafImage, 15, 2);
 		}
 
-		myTurtle.turnRight(170);
-		myTurtle.image(leafImage, 10, 10);
+		myTurtle.turnRight(173);
+		myTurtle.image(leafImage, 20, -10);
+		// stroke(random(255), random(255), random(255));
+
 	}
 
 

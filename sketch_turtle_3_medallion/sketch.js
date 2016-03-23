@@ -4,10 +4,10 @@ var myTurtle;
 
 function setup() {
 	createCanvas(windowWidth, windowHeight);
-	noFill();
+	// noFill();
 	stroke(random(255), random(255), random(255));
 	background(0);
-	frameRate(15);
+	frameRate(30);
 	// noLoop();
 
 	myTurtle = new Turtle();
@@ -20,7 +20,7 @@ function setup() {
 function draw() {
 	// move to starting position (without drawing)
 	myTurtle.penUp();
-	myTurtle.moveForward(25);
+	myTurtle.moveForward(55);
 	myTurtle.penDown();
 
 	// uglyTurtle.penDown();
@@ -29,11 +29,11 @@ function draw() {
 
 	// // star
 	for (var i = 0; i < 15; i++) {
-		for (var j = i * sin(30); j < 9; j++) {
-			myTurtle.moveForward(7);
-			myTurtle.turnLeft(j + i);
-			myTurtle.turnRight(40 * i);
-			myTurtle.moveBackward(53 + j);
+		for (var j = i + 50; j < 90; j++) {
+			myTurtle.moveForward(j);
+			myTurtle.turnLeft(i);
+			myTurtle.turnRight(j);
+			myTurtle.moveBackward(j + i);
 
 			// uglyTurtle.moveBackward(i * noise(14, j));
 			// uglyTurtle.turnTo(i * noise(j * (17, i)));
