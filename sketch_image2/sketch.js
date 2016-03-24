@@ -11,6 +11,7 @@ function setup() {
 	// create a place to draw
 	createCanvas(lion.width, lion.height);
 	frameRate(30);
+	lion.loadPixels();
 }
 
 
@@ -24,20 +25,32 @@ function draw() {
 	// strokeWeight(10);
 	imageMode(CENTER);
 
-	image(lion,width/2,height/2, lion.width, lion.height);
-	var c = get(random(400,150),random(550,600));
-  fill(c);
-  noStroke();
+	image(lion, width / 2, height / 2, lion.width, lion.height);
+	var c = get(300, 350);
+	fill(c);
+	noStroke();
 
-	for (var i = 0; i < 500; i++) {
-		rect(random(windowWidth), random(windowHeight),  random(10,50),random(10,90));
+	var d = pixelDensity;
+	for (var i = 0; i < d; i++) {
+		for (var j = 0; j < d; j++) {
+			// loop over
+			idx = 4 * ((y * d + j) * width * d + (x * d + i));
+			pixels[idx] = r;
+			pixels[idx + 1] = g;
+			pixels[idx + 2] = b;
+			pixels[idx + 3] = a;
+		}
 	}
 
+	// for (var k = 9; k < 30; k++) {
+	// 	rect(random(width), random(height), (10, 50), (10, 90));
+	// }
+	lion.updatePixels();
 
 
 
 	if (frameCount < 150) {
-		saveFrame("frame", frameCount);
+		// saveFrame("frame", frameCount);
 	} else {
 		noLoop();
 	}
@@ -45,10 +58,10 @@ function draw() {
 }
 // saveFrame - a utility function to save the current frame out with a nicely formatted name
 function saveFrame(name, frameNumber) {
-// remove the decimal part (just in case)
-frameNumber = floor(frameNumber);
-// zero-pad the number (e.g. 13 -> 0013);
-var paddedNumber = ("0000" + frameNumber).substr(-4, 4);
+	// remove the decimal part (just in case)
+	frameNumber = floor(frameNumber);
+	// zero-pad the number (e.g. 13 -> 0013);
+	var paddedNumber = ("0000" + frameNumber).substr(-4, 4);
 
-save(name + "_" + paddedNumber);
+	save(name + "_" + paddedNumber);
 }
