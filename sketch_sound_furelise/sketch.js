@@ -6,13 +6,13 @@ var fft;
 var collect_bins = 1024;
 var smoothing = 0;
 var show_bins = 64;
-var wave_scale = 1;
+var wave_scale = 0.3;
 
 
 var flowerR = 0;
 
 function preload() {
-	sound = loadSound('assets/FurElise.ogg');
+	sound = loadSound('assets/londonbridge.wav');
 	fft = new p5.FFT(smoothing, collect_bins);
 }
 
