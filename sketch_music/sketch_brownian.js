@@ -20,12 +20,12 @@ function makeSongBrownian() {
 
 	// Create an array holding the scale note values.
 	// Here we use the notes in the Chromatic Scale (all the notes in the octave)
-	var scale = [60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, "rest"];
+	// var scale = [60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, "rest"];
 
 	// Or we could use the notes in C Major
 	/* var scale = sample([60, 62, 64, 65, 67, 69, 71, "rest"]); */
 	// Or we could use the notes in C Minor
-	/* var scale = sample([60, 62, 63, 65, 67, 68, 70, "rest"]); */
+	var scale = ([60, 62, 63, 65, 67, 68, 70, "rest"]);
 
 
 	// First pick a random position in the scale

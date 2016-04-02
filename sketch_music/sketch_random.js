@@ -29,11 +29,11 @@ function makeSongRandom() {
 		// We will pick values at random from this array.
 
 		// Here we use the notes in the Chromatic Scale (all the notes in the octave)
-		var scale = [60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, "rest"];
+		// var scale = [60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, "rest"];
 		// Or we could use the notes in C Major
-		/* var scale = sample([60, 62, 64, 65, 67, 69, 71, "rest"]); */
+		var scale = ([60, 62, 64, 65, 67, 69, 71, "rest"]);
 		// Or we could use the notes in C Minor
-		/* var scale = sample([60, 62, 63, 65, 67, 68, 70, "rest"]); */
+		// var scale = ([60, 62, 63, 65, 67, 68, 70, "rest"]);
 
 		// Each note in the song data is an array with two values: note and length.
 		// Here, a new note is created by randomly picking a note and length.
@@ -43,7 +43,7 @@ function makeSongRandom() {
 		];
 
 		// Add the note to the song.
-		song.push();
+		song.push(note);
 	}
 
 	// We've made a song, send it back to the caller.
